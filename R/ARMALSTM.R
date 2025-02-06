@@ -126,7 +126,7 @@ ARMA.LSTM<- function (X, p, q, arfima=FALSE, dist.model = "ged", out.sample, LST
   LSTM.feature<- array(LSTM.feature, dim = c(nrow(LSTM.feature), lag.lstm, 1))
 
   # LSTM model
-  lstm_model <- keras::keras_model_sequential() %>%
+  lstm_model <- keras3::keras_model_sequential() %>%
     layer_lstm(units =LSTM.units, input_shape = c(lag.lstm, 1), activation=ACTIVATION.function, dropout=DROPOUT) %>%
     layer_dense(units = 1)
 
